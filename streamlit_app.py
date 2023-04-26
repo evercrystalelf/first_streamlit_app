@@ -34,9 +34,6 @@ streamlit.dataframe(fruits_to_show)
 # # output it the screen as a table
 # streamlit.dataframe(fruityvice_normalized)
 
-# don't run anything past here while we troubleshoot
-streamlit.stop()
-
 # New Section to display fruityvice api response after
 streamlit.header("Fruityvice Fruit Advice!")
 try:
@@ -49,6 +46,9 @@ try:
     streamlit.dataframe(fruityvice_normalized)
 except URLError as e:
   streamlit.error()
+
+# don't run anything past here while we troubleshoot
+streamlit.stop()
 
 # my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 # my_cur = my_cnx.cursor()
